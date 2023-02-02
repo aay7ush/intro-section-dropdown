@@ -13,7 +13,7 @@ Building realistic projects to improve my front-end skills.
 
 ### Links
 
-- Live Site URL: [Intro section with dropdown navigation](https://1nteractive-card-details.netlify.app/)
+- Live Site URL: [Intro section with dropdown navigation](https://1ntro-section-dropdown.netlify.app/)
 
 ## Built with
 
