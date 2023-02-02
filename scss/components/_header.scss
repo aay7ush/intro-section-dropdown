@@ -1,0 +1,135 @@
+@use "../utils/" as u;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  .primary__nav {
+    .menu-close,
+    .nav__items,
+    .header__buttons {
+      display: none;
+    }
+
+    .menu-open,
+    .menu-close {
+      cursor: pointer;
+    }
+
+    .nav__items {
+      a:any-link {
+        color: var(--clr-grey);
+
+        &:hover {
+          color: var(--clr-black);
+          transition: 0.3s ease;
+        }
+      }
+
+      .menu {
+        display: none;
+        gap: 1rem;
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 0.5rem;
+
+        li {
+          display: flex;
+          gap: 1.5rem;
+          font-size: 1rem;
+        }
+
+        @include u.breakpoint(lg) {
+          position: absolute;
+          margin-left: -1.5rem;
+        }
+      }
+    }
+
+    .active {
+      i {
+        transform: rotate(180deg);
+      }
+
+      .menu {
+        display: grid;
+      }
+    }
+
+    .header__buttons {
+      button {
+        color: var(--clr-grey);
+
+        &:hover {
+          color: var(--clr-black);
+          transition: 0.3s ease;
+        }
+      }
+    }
+
+    @include u.breakpoint(lg) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-basis: 100%;
+
+      .menu-open {
+        display: none;
+      }
+
+      .nav__items {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .header__buttons {
+        display: flex;
+        gap: 1.5rem;
+      }
+    }
+  }
+
+  .mobile-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 65vw;
+    height: 100vh;
+    background-color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .menu-open {
+      display: none;
+    }
+
+    .menu-close {
+      display: flex;
+      justify-content: flex-end;
+      padding-bottom: 1.5rem;
+    }
+
+    .nav__items {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .header__buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+  }
+
+  @include u.breakpoint(lg) {
+    justify-content: normal;
+    gap: 2rem;
+    align-items: center;
+    padding-inline: 3rem;
+  }
+}

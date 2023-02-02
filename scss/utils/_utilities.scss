@@ -1,0 +1,44 @@
+@use "breakpoints" as b;
+
+// Utility Classes
+
+.container {
+  min-height: 90vh;
+  display: grid;
+  place-content: center;
+  margin-inline: auto;
+
+  @include b.breakpoint(md) {
+    max-width: min(85vw, 1100px);
+    gap: 3.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.primary-btn {
+  border-radius: 15px;
+  padding: 1rem;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+
+  &:hover {
+    background: transparent;
+    color: var(--clr-black);
+    border: 1px solid var(--clr-black);
+    transition: 0.3s ease;
+  }
+}
+
+.secondary-btn {
+  border: 2px solid var(--clr-gray);
+  border-radius: 15px;
+  padding: 0.7rem 1rem;
+  color: var(--clr-gray);
+
+  &:hover {
+    border-color: var(--clr-black);
+    color: var(--clr-black);
+    transition: 0.3s ease;
+  }
+}

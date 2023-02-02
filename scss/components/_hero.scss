@@ -1,0 +1,68 @@
+@use "../utils/" as u;
+
+.hero__img {
+  @include u.breakpoint(md) {
+    order: 1;
+    margin-inline: auto;
+
+    img {
+      content: url(../../images/image-hero-desktop.png);
+      max-height: 550px;
+    }
+  }
+}
+
+.hero__content {
+  text-align: center;
+  display: grid;
+  gap: 1.5rem;
+  margin-block: 2rem;
+
+  .hero__title {
+    color: var(--clr-black);
+    font-size: clamp(2.5rem, 2.5rem + 2vw, 4.4rem);
+
+    @include u.breakpoint(md) {
+      text-align: start;
+      padding-right: calc(1.5rem + 1vw);
+    }
+  }
+
+  .hero__body {
+    line-height: 1.7rem;
+    padding-inline: 2rem;
+
+    @include u.breakpoint(md) {
+      text-align: start;
+      padding-inline: 0 1rem;
+    }
+  }
+
+  button {
+    max-width: 150px;
+    margin-inline: auto;
+
+    @include u.breakpoint(md) {
+      margin-inline: 0;
+    }
+  }
+
+  .hero__companies {
+    display: flex;
+    justify-content: space-around;
+    padding-block: 1.5rem 3rem;
+    img {
+      width: 70px;
+      height: 35px;
+      object-fit: contain;
+
+      @include u.breakpoint(lg) {
+        width: 100px;
+      }
+    }
+  }
+
+  @include u.breakpoint(md) {
+    margin-block: auto;
+  }
+}
